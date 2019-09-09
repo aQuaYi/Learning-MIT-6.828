@@ -39,6 +39,7 @@ virtual box 中的 Ubuntu 18.04。
 ## 6. 类似笔记
 
 - [SmallPond/MIT6.828_OS](https://github.com/SmallPond/MIT6.828_OS)
+- [shishujuan/mit6.828-2017](https://github.com/shishujuan/mit6.828-2017)
 
 ## 7. 致谢
 
