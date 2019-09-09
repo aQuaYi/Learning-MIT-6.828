@@ -16,4 +16,6 @@
 
 ## 2. 实现环境
 
-virtual box 中的 Ubuntu 18.04
+virtual box 中的 Ubuntu 18.04。
+
+具体细节请参见 []()
