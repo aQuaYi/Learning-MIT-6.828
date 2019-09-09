@@ -15,3 +15,5 @@
 - [xv6 讲义](https://pdos.csail.mit.edu/6.828/2019/xv6/book-riscv-rev0.pdf)：详细讲解了 xv6 的实现细节。作业做不出来的时候，可以参考。
 
 ## 2. 实现环境
+
+virtual box 中的 Ubuntu 18.04
