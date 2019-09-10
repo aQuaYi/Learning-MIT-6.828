@@ -15,16 +15,16 @@
 
 ## 课堂材料
 
-- [简介(introduction)](LEC/01/l-overview.txt.md)
-- [示例(examples)](LEC/01/examples)
+- [简介(introduction)](l-overview.txt.md)
+- [示例(examples)](examples)
 - [xv6 讲义][xv6-book]
 
 ## 作业
 
-[Lab: Xv6 与 Unix 工具](LEC/01/Lab_Xv6_and_Unix_utilities.html)
+[Lab: Xv6 与 Unix 工具](Lab_Xv6_and_Unix_utilities.html)
 
 ## 笔记
 
 <!-- LINK -->
 
-- [xv6-book]: LEC/01/book-riscv-rev0.pdf "xv6 讲义"
+- [xv6-book]: book-riscv-rev0.pdf "xv6 讲义"
