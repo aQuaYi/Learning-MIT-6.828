@@ -11,8 +11,7 @@
 
 - [重要链接](#重要链接)
 - [实现环境](#实现环境)
-- [讲义](#讲义)
-	- [01.[rtm](LEC/01.rtm)](#01rtmlec01rtm)
+- [课堂](#课堂)
 - [实验](#实验)
 - [参考资料](#参考资料)
 - [类似笔记](#类似笔记)
@@ -30,17 +29,9 @@ virtual box 中的 Ubuntu 18.04。
 
 具体细节请参见 [环境搭建](environment.md)
 
-## 讲义
+## 课堂
 
-### 01.[rtm](LEC/01.rtm)
-
-预习：阅读 [xv6 讲义][xv6-book] 第一章
-
-- [简介(introduction)](LEC/01.rtm/l-overview.txt.md)
-- [示例(examples)](LEC/01.rtm/examples)
-- [xv6 讲义][xv6-book]
-
-作业：[Lab: Xv6 与 Unix 工具](LEC/01.rtm/Lab_Xv6_and_Unix_utilities.html)
+- [LEC01: 简介与示例](LEC/01)
 
 ## 实验
 
@@ -54,7 +45,3 @@ virtual box 中的 Ubuntu 18.04。
 ## 致谢
 
 <!-- TODO: 添加贡献者清单 -->
-
-<!-- LINK -->
-
-- [xv6-book]: LEC/1(rtm)/book-riscv-rev0.pdf "xv6 讲义"
