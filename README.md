@@ -38,7 +38,7 @@ virtual box 中的 Ubuntu 18.04。
 - [示例(examples)](LEC/1(rtm)/examples)
 - [xv6 讲义][xv6-book]
 
-作业：
+作业：[Lab: Xv6 与 Unix 工具](LEC/1(rtm)/Lab_ Xv6 and Unix utilities.html)
 
 [在线阅读](https://aquayi.gitbook.io/learning-mit-6-828/)
 
