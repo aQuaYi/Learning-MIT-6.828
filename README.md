@@ -1,5 +1,7 @@
 # 学习 MIT 6.828： 操作系统工程
 
+[在线阅读](https://aquayi.gitbook.io/learning-mit-6-828/)
+
 [![LICENSE](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 <!-- TODO: 编写课程小结 -->
@@ -10,7 +12,7 @@
 - [重要链接](#重要链接)
 - [实现环境](#实现环境)
 - [讲义](#讲义)
-	- [[01.rtm](LEC/01.rtm)](#01rtmlec01rtm)
+	- [01.[rtm](LEC/01.rtm)](#01rtmlec01rtm)
 - [实验](#实验)
 - [参考资料](#参考资料)
 - [类似笔记](#类似笔记)
@@ -30,7 +32,7 @@ virtual box 中的 Ubuntu 18.04。
 
 ## 讲义
 
-### [01.rtm](LEC/01.rtm)
+### 01.[rtm](LEC/01.rtm)
 
 预习：阅读 [xv6 讲义][xv6-book] 第一章
 
@@ -39,8 +41,6 @@ virtual box 中的 Ubuntu 18.04。
 - [xv6 讲义][xv6-book]
 
 作业：[Lab: Xv6 与 Unix 工具](LEC/01.rtm/Lab_Xv6_and_Unix_utilities.html)
-
-[在线阅读](https://aquayi.gitbook.io/learning-mit-6-828/)
 
 ## 实验
 
