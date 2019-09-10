@@ -11,20 +11,16 @@
 
 ## 预习
 
-阅读 [xv6 讲义][xv6-book] 第一章
+阅读 [xv6 讲义](book-riscv-rev0.pdf) 第一章
 
 ## 课堂材料
 
 - [简介(introduction)](l-overview.txt.md)
 - [示例(examples)](examples)
-- [xv6 讲义][xv6-book]
+- [xv6 讲义](book-riscv-rev0.pdf)
 
 ## 作业
 
 [Lab: Xv6 与 Unix 工具](Lab_Xv6_and_Unix_utilities.html)
 
 ## 笔记
-
-<!-- LINK -->
-
-- [xv6-book]: book-riscv-rev0.pdf "xv6 讲义"
