@@ -1,9 +1,10 @@
-# Dynamic memory allocation (allocators)
+# C and gdb (pointers example)
 
 <!-- TOC depthFrom:2 -->
 
 - [预习](#预习)
 - [课堂材料](#课堂材料)
+- [作业](#作业)
 - [笔记](#笔记)
 
 <!-- /TOC -->
@@ -12,13 +13,15 @@
 
 [The C Programming Language](../The_C_Programming_Language.pdf) 或 [中文版](../C程序设计语言.pdf) 的
 
-- 5.1 (Pointers and addresses) through 5.6 (Pointer arrays)
-- 6.4 (pointers to structures)
-- 8.7 (Storage Allocator)
+- 2.9 (Bitwise operators)
 
 ## 课堂材料
 
-- [讲义](l-allocator.txt.md)
-- [allocators](malloc.c)
+- [gdb](gdb_slides.pdf)
+- [pointers](pointers.c)
+
+## 作业
+
+[Lab: simple xv6 shell](Lab_Simple_xv6_shell.html)
 
 ## 笔记

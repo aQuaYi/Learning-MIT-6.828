@@ -1,0 +1,204 @@
+﻿<html><head>
+<base href="https://pdos.csail.mit.edu/6.828/2019/labs/sh.html">
+<title>Lab: Simple xv6 shell</title>
+<style data-savepage-href="labs.css" type="text/css">div.required, div.challenge, div.question {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    width: 80%;
+    background-color: #e0e0ff;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+div.required .header {
+    font-weight: bold;
+}
+
+div.challenge .header {
+    font-style: italic;
+}
+
+div.question .header {
+    font-weight: bold;
+}
+
+div.required {
+    background-color: #e0e0ff;
+    border: 1px solid #c0c0ff;
+}
+
+div.challenge {
+    background-color: #ffe0e0;
+    border: 1px solid #ffc0c0;
+}
+
+div.question {
+    background-color: #e0e0ff;
+    border: 1px solid #c0c0ff;
+}
+
+kbd {
+   color: #007700;
+   font-family: monospace;
+   font-weight: bold;
+}
+
+
+</style>
+<style type="text/css">#MsnDialog.ad, #MyMoveAd, #QQ_Full, #ad-SNSSplashAd, #ad6cn, #adBody07, #adLeftFloat, #adRightFloat, #ad_box1, #ad_box2, #ad_full, #ad_headerbanner, #ads_c_tpc, #ads_top_video, #adtop1, #adx_cggp, #crazy_ad_float, #crazy_ad_layer, #cs_left_couplet, #cs_right_couplet, #doyoo_mon_mask, #doyoo_monitor, #duilian_left, #duilian_right, #eis_pad1, #eis_pad2, #floatAd, #floatad-winpop, #fwin_popad_7ree, #fwin_popad_7ree + #fwin_dialog, #gg300, #googleAdIndexTop, #haoetv1, #js-ad-map, #js_ads_banner_top, #js_ads_banner_top_slide, #kfpopupDiv, #leftCouple, #leftCouplet, #leftFloat + #rightFloat, #left_couple, #left_down_float_ad, #left_float + #right_float, #left_top_ad, #left_up_float_ad, #lovexin1, #lovexin11, #lovexin12, #lovexin13, #lovexin14 { display: none!important; z-index:-1!important; height:0px!important;}
+#lovexin2, #mbjx_ad, #miaov_float_layer, #micast_ads, #movieInfoRight, #my-adsFPR, #navcontainer + .moneyarea, #netease_mail_footer, #olfullad, #overture_ads_bottom_td, #overture_ads_top_td, #popup.t, #ptcmsad1, #qj960a, #qj960b, #results.content-main > .eLeft, #rightCouple, #rightCouple + #leftFloat, #rightCouplet, #rightCouplet + #leftFloat, #right_couple, #right_couple + #left_float, #right_down_float_ad, #right_up_float_ad, #shareman_ad, #sitefocus.focus, #snActive-wrap, #table1[width="468"][height="50"], #table1[width="794"][height="60"], #table1[width="812"][height="50"], #tanx-con-1, #tanx-fold-main, #textggs, #top_ads0, #toperAd2, #toptb + div[align="center"], #tr_ad1, #tr_ad10, #tr_ad11, #tr_ad2, #tr_ad3, #tr_ad4, #tr_ad5, #tr_ad6, #tr_ad7, #tr_ad8, #tr_ad9, #tripadvisor-ad, #xinnxi, #xinxi { display: none!important; z-index:-1!important; height:0px!important;}
+#zds_ad, ._cggp, ._ggs, ._popIn_recommend_article_ad, ._popIn_recommend_article_ad_reserved, .a_cn, .a_fl, .a_pb, .a_pr, .a_sxc, .a_xsfl, .ad-above-footer, .ad-below-adjacent-post, .ad-below-header-menu, .ad-below-post-title, .ad-below-related-post, .ad-couplet-common, .ad-left-down, .ad-left-top, .ad-right-down, .ad-right-top, .ad-site, .ad250left, .ad250right, .ad300left, .ad336left, .ad990x130, .ad990x90, .ad_couplebanner, .ad_fixed, .ad_footerbanner, .ad_headerbanner, .ad_hf, .ad_home_current, .ad_midd, .ad_right_1, .ad_right_2, .ad_thread, .ads > a > img[src*=".sinaimg."], .adsense160, .adsense200, .adsoho, .assort-ad, .banner-ad-section, .bdyp-sygg-ul, .below_ads, .bm.a_c, .bn728-93, .bottom-adv, .bottomSponsor { display: none!important; z-index:-1!important; height:0px!important;}
+.bus_adsbox, .cari-ads, .chat-ad, .chat-right-ad, .chat-sysbroadcast-ad, .chat-top-ad, .comiis_adbox, .con_ad, .content-video > .ads, .content-video > .ads-player, .content_ad_300, .couplet_9cb0d, .customSlideshow-ad-below, .d_slidebanner, .f-sign-cont[data-dysign-adid], .gg1000, .gg430, .gg_300, .gg_950, .gg_960, .gg_full, .ggad, .ggdistich, .gggtop, .ggpost-below, .ggtop, .google_adsense2, .gpt_ads_box, .hao123-unionad-pic, .heg > .div-list, .his-sign-cont[data-dysign-adid], .iHead960x90, .index_alert_gg, .indexad2, .indexad3, .indexad4, .it618_firstad_flex, .kf_qycn_com_cckf_welcomebox, .leftadv, .lol-ad, .lol_ad, .lyzm-prevent, .menutab_ad, .ml_ad1, .ml_ad3, .ml_ad5, .mlad, .movie-advert-link, .pagead_3, .player-bottom-gg { display: none!important; z-index:-1!important; height:0px!important;}
+.readerAd, .room-ad-bottom, .room-ad-top, .room-ad-video-down, .scupioadslot, .sxAdBox, .theme_custom_slidebox-ad-below, .tipadds, .tmall_ad_container, .top-read-ad, .topSponsor, .toy52_outer, .toy52apparel_ALL, .twavt-ads, .wf_ad_block, .widget_ad_sidebar, .widget_adbox, .wp.a_f, .wp.a_h, .wumii-bottom-popup, .wumii-widget-ad, .wzad, .yd_ad, .yd_ad1, .yd_ad2, .yd_ad3, .yd_ad5, .yd_ad6, .zone_wap_banner2, A[href*=".com/?Agent="], a[href*=".123ch.cn"], a[href*=".222bz.com/"], a[href*=".9xiazaiqi.com"], a[href*=".com/?Extend="], a[href*=".com/?p="][target="_blank"] > img[src$=".gif"], a[href*=".com/Register.aspx?aid="], a[href*=".com/Register/?a="], a[href*=".com/Register?a="], a[href*=".com?aff="], a[href*=".com?intr="], a[href*=".downok.com"], a[href*=".qpzqxz.com/"], a[href*=".qtj5.com/"], a[href*=".tudown.com/"], a[href*=".wjLkj.com/"], a[href*=".yyk2.com/"], a[href*="/?INTR="], a[href*="/?Intr="], a[href*="/?intr="], a[href^="http://ad.moemoe."] { display: none!important; z-index:-1!important; height:0px!important;}
+a[href^="http://go.gotourl.xyz/"], a[href^="http://www.upupoo.com/?"], a[href^="https://hi.potvpn.com/?from="], body[onload*="u()"] > #x, div#ad_id, div[id^="ad_thread"], img[src$="/2016-0114-700X70.gif"] ~ a[onmouseover="this.style.background='#DEF5CD';"]:nth-child(-n+226), img[src$="/2016-0114-700X70.gif"] ~ span[class^="f"] > span > a[onmouseover="this.style.background='#DEF5CD';"]:first-child:last-child, img[src$="/47650fdad90b35b07d9339b792713f7e.gif"] ~ a[onmouseover="this.style.background='#DEF5CD';"]:nth-child(-n+226), img[src$="/47650fdad90b35b07d9339b792713f7e.gif"] ~ span[class^="f"] > span > a[onmouseover="this.style.background='#DEF5CD';"]:first-child:last-child, img[src$="/a1b45005bda18472821222856c6d4f99.gif"] ~ a[onmouseover="this.style.background='#DEF5CD';"]:nth-child(-n+226), img[src$="/a1b45005bda18472821222856c6d4f99.gif"] ~ span[class^="f"] > span > a[onmouseover="this.style.background='#DEF5CD';"]:first-child:last-child, script + #rbbox, script + .sptable[cellpadding="5"], script + .sptable_do_not_remove[cellpadding="5"], table[style="border:#e8e8e8 1px solid;"] + div[style="margin-top:5px"] > table[style="width:100%;"][cellspacing="0"][cellpadding="1"][bordercolor="#999999"][border="1"], [style="display:none"] + iframe[scrolling="no"][src*="//"][src*="?"][src*="="][src*="&"][width][height][frameborder="0"], div:not([id]):not([class]):not([style]) > div:not([id]):not([class]):not([style]) > iframe[scrolling="no"][src*="//"][src*="?"][src*="="][src*="&"][width][height][frameborder="0"], div[style^="width: 100%;"][style$="display: block;"] iframe[scrolling="no"][src*="//"][src*="?"][src*="="][src*="&"][width][height][frameborder="0"], div[style^="width: 100%;"][style$="margin: 0px;"] iframe[scrolling="no"][src*="//"][src*="?"][src*="="][src*="&"][width][height][frameborder="0"], div[style^="width: 100%;"][style$="opacity: 100;"] iframe[scrolling="no"][src*="//"][src*="?"][src*="="][src*="&"][width][height][frameborder="0"], div[style^="width: 100%;"][style$="overflow: hidden;"] iframe[scrolling="no"][src*="//"][src*="?"][src*="="][src*="&"][width][height][frameborder="0"], div[style^="width: 100%;"][style$="visibility: visible;"] iframe[scrolling="no"][src*="//"][src*="?"][src*="="][src*="&"][width][height][frameborder="0"], div[style^="width: 100%;"][style$="z-index: inherit;"] iframe[scrolling="no"][src*="//"][src*="?"][src*="="][src*="&"][width][height][frameborder="0"], #cpro_container, a[href*="/mobads.php?"], div[id][style="width: 100%;"] > div > div > iframe[scrolling="no"][src^="http"][src*="?"][src*="="][src*="&"][width][height][frameborder="0"], div[id][style="width: 100%;"] > div > iframe[scrolling="no"][src^="http"][src*="?"][src*="="][src*="&"][width][height][frameborder="0"], div[id][style="width: 100%;"] > iframe[scrolling="no"][src^="http"][src*="?"][src*="="][src*="&"][width][height][frameborder="0"], div[style="width: 100%;"]:not([id]):not([class]) > iframe[scrolling="no"][src*="//"][src*="?"][src*="="][src*="&"][width][height][frameborder="0"], div[style^="width: 100%;"]:not([id]):not([class]) > iframe[scrolling="no"][src^="http"][src*="?"][src*="="][src*="&"][width][height][frameborder="0"], .footer > #box[style="width:100%;height:100%;position:fixed;top:0"], a[href^="http://yunbofangbt."], #j-new-ad, .a_sxfl, .a_sxmu, .a_sxp, .a_sxpb, .heg > .partner-list, a[href^="/dasp.php?a="], [class^="ADTOPLB"] { display: none!important; z-index:-1!important; height:0px!important;}
+</style><style type="text/css">.adsbygoogle, .ggbox, .banner-site, .a_p, .a_fr, a[href*="/cpro/"], a[href*="/cpro."], a[href*="/?aff="], a[href*=".umeng.com"], a > img[width="980"][src*=".sinaimg."], a > img[width="960"][src*=".sinaimg."], a > img[src*=".sinaimg."][src$=".gif"][style*="width:960"], .wp.a_t, .widget_ui_ads, .baiduad, .a_pt, .a_mu, #kfivtwin, #haoetv, #gg1 { display: none!important; z-index:-1!important; height:0px!important;}
+</style><style type="text/css">#htmlToothbrush #bodyToothbrush .parentToothbrush .bilibili-player-video {margin:0 !important;}
+#htmlToothbrush, #bodyToothbrush {overflow:hidden !important;zoom:100% !important;}
+#htmlToothbrush #bodyToothbrush .parentToothbrush {overflow:visible !important;z-index:auto !important;transform:none !important;-webkit-transform-style:flat !important;transition:none !important;contain:none !important;}
+#htmlToothbrush #bodyToothbrush .absoluteToothbrush {position:absolute !important;}
+#htmlToothbrush #bodyToothbrush .playerToothbrush {position:fixed !important;top:0px !important;left:0px !important;width:100vw !important;height:100vh !important;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;margin:0 !important;padding:0 !important;z-index:2147483647 !important;border:none !important;background-color:#000 !important;transform:none !important;}
+#htmlToothbrush #bodyToothbrush .parentToothbrush video {object-fit:contain !important;}
+#htmlToothbrush #bodyToothbrush .parentToothbrush .videoToothbrush {width:100vw !important;height:100vh !important;}
+#playerControlBtn {text-shadow: none;visibility:hidden;opacity:0;display:none;transition: all 0.5s ease;cursor: pointer;font: 12px "微软雅黑";margin:0;width:64px;height:20px;line-height:20px;border:none;text-align: center;position: fixed;z-index:2147483647;background-color: #27A9D8;color: #FFF;} #playerControlBtn:hover {visibility:visible;opacity:1;background-color:#2774D8;}
+#picinpicBtn {text-shadow: none;visibility:hidden;opacity:0;display:none;transition: all 0.5s ease;cursor: pointer;font: 12px "微软雅黑";margin:0;width:53px;height:20px;line-height:20px;border:none;text-align: center;position: fixed;z-index:2147483647;background-color: #27A9D8;color: #FFF;} #picinpicBtn:hover {visibility:visible;opacity:1;background-color:#2774D8;}
+#leftFullStackButton{display:none;position:fixed;width:1px;height:100vh;top:0;left:0;z-index:2147483647;background:#000;}
+#rightFullStackButton{display:none;position:fixed;width:1px;height:100vh;top:0;right:0;z-index:2147483647;background:#000;}</style><style>@media print {#ghostery-purple-box {display:none !important}}</style>
+<link rel="icon" href="data:image/x-icon;base64,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">
+<style id="savepage-cssvariables">
+  :root {
+  }
+</style>
+<script id="savepage-shadowloader" type="application/javascript">
+  "use strict"
+  window.addEventListener("DOMContentLoaded",
+  function(event)
+  {
+    savepage_ShadowLoader(5);
+    document.getElementById('savepage-shadowloader').remove();
+  },false);
+  function savepage_ShadowLoader(c){createShadowDOMs(0,document.documentElement);function createShadowDOMs(a,b){var i;if(b.localName=="iframe"||b.localName=="frame"){if(a<c){try{if(b.contentDocument.documentElement!=null){createShadowDOMs(a+1,b.contentDocument.documentElement)}}catch(e){}}}else{if(b.children.length>=1&&b.children[0].localName=="template"&&b.children[0].hasAttribute("data-savepage-shadowroot")){b.attachShadow({mode:"open"}).appendChild(b.children[0].content);b.removeChild(b.children[0]);for(i=0;i<b.shadowRoot.children.length;i++)if(b.shadowRoot.children[i]!=null)createShadowDOMs(a,b.shadowRoot.children[i])}for(i=0;i<b.children.length;i++)if(b.children[i]!=null)createShadowDOMs(a,b.children[i])}}}
+</script>
+<meta name="savepage-url" content="https://pdos.csail.mit.edu/6.828/2019/labs/sh.html">
+<meta name="savepage-title" content="Lab: Simple xv6 shell">
+<meta name="savepage-date" content="Thu Sep 12 2019 11:15:59 GMT+0800 (中国标准时间)">
+<meta name="savepage-state" content="Standard Items; Retained cross-origin frames; Removed unsaved URLs; Max frame depth = 5; Max resource size = 50MB; Max resource time = 10s;">
+<meta name="savepage-version" content="16.0">
+<meta name="savepage-comments" content=""></head>
+<body>
+
+<h2>Lab: Simple xv6 shell</h2>
+
+<p>
+This lab will shed light on how UNIX shells use basic system calls.
+
+</p><p>
+Your job is to write a simple shell for xv6. It should be able to run
+commands with arguments, handle input and output redirection, and set
+up two-element pipelines. Your shell should act like
+the xv6 shell <tt>sh</tt> for these examples as well as similar
+commands:
+
+</p><pre>echo hello there
+echo something &gt; file.txt
+ls | grep READ
+grep lion &lt; data.txt | wc &gt; count
+echo echo hello | nsh
+find . b | xargs grep hello
+</pre>
+
+<p>
+You should put your shell source in <tt>user/nsh.c</tt>, and modify
+the <tt>Makefile</tt> to compile it.
+We'll test your <tt>user/nsh.c</tt> with our copies of
+other xv6 files; so while you can modify other files, your
+shell should not depend on those modifications.
+Your shell should use <tt>@</tt> (at sign) as a prompt rather
+than <tt>$</tt>, to avoid confusion with the real shell.
+An xv6 session with your shell might look like this:
+
+</p><pre>xv6 kernel is booting
+$ nsh
+@ grep Ken &lt; README
+xv6 is a re-implementation of Dennis Ritchie's and Ken Thompson's Unix
+@ 
+</pre>
+
+<p>
+Please do <b>not</b> use a memory allocator such as <tt>malloc()</tt>.
+Instead you should use only local (stack-allocated) variables and
+global variables. It's OK to impose reasonable fixed limits on things
+like the maximum length of a command name, the maximum number of
+arguments, or the maximum length of any single argument.
+
+</p><p>
+We supply you with an xv6 test program <tt>testsh</tt>,
+source in <tt>user/testsh.c</tt>.
+You're
+done with the lab if your shell passes all the tests, like this:
+
+</p><pre>$ testsh nsh
+simple echo: PASS
+simple grep: PASS
+two commands: PASS
+output redirection: PASS
+input redirection: PASS
+both redirections: PASS
+simple pipe: PASS
+pipe and redirects: PASS
+lots of commands: PASS
+passed all tests
+</pre>
+
+
+
+
+
+<h3>Getting started</h3>
+
+<p>In this and future labs you will progressively build up your xv6,
+  but it will be handy to maintain a branch per lab:
+  </p><pre>  $ <kbd>git checkout sh</kbd>
+  </pre>
+
+<p>You don't have to merge an earlier lab solution into subsequent
+  labs.  If you find you need some work from earlier lab, you are free
+  to merge it into later branches, but most labs are fairly
+  independent of each other.
+
+</p><p>
+Git allows switching between existing branches using <kbd>git
+checkout <i>branch-name</i></kbd>, though you should commit any
+outstanding changes on one branch before switching to a different
+one.
+
+</p><h3>Hints</h3>
+
+<p>
+You don't need to implement features that aren't required by the
+tests; for example, you don't have to implement parentheses or
+quoting.
+
+</p><p>
+The Kernighan and Ritchie C book is full of useful bits of code; feel
+free to incorporate any of it in your solution (with comments
+stating where you got the code). For
+example, you may find useful the <tt>gettoken()</tt> function from the
+parser in Section 5.12.
+
+</p><p>
+You can look at the xv6 shell source (in <tt>user/sh.c</tt>) for ideas,
+and borrow code, as long as you include comments saying where
+you got the code.
+
+</p><p>
+Xv6 supplies you with a small library of C functions in <tt>user/ulib.c</tt>;
+feel free to use them. As mentioned above,
+however, you are not allowed to use <tt>malloc()</tt>.
+
+</p><p>
+Remember to close un-needed file descriptors, both to avoid
+running out, and because a process reading a pipe won't see
+end-of-file until all the write descriptors for that pipe are closed.
+</p><remove-web-limits-iqxin id="rwl-iqxin" class="rwl-exempt" style="position: fixed; top: 0px; left: 0px;"><button type="button" id="rwl-setbtn"> set </button> <lalala style="cursor:move;">限制解除</lalala> <input type="checkbox" name="" id="black_node"><style type="text/css">#rwl-iqxin{position:fixed;transform:translate(-90px,0);width:85px;height:25px;font-size:12px;font-weight: 500;font-family:Verdana, Arial, '宋体';color:#fff;background:#333;z-index:2147483647;margin: 0;opacity:0.05;transition:0.3s;overflow:hidden;user-select:none;text-align:center;white-space:nowrap;line-height:25px;padding:0 16px;border:1px solid #ccc;border-width:1px 1px 1px 0;border-bottom-right-radius:5px;box-sizing: content-box;}#rwl-iqxin input{margin: 0;padding: 0;vertical-align:middle;-webkit-appearance:checkbox;-moz-appearance:checkbox;position: static;clip: auto;opacity: 1;cursor: pointer;}#rwl-iqxin.rwl-active-iqxin{left: 0px;transform:translate(0,0);opacity: 0.9;height: 32px;line-height: 32px}#rwl-iqxin label{margin:0;padding:0;font-weight:500;}#rwl-iqxin button{margin: 0;padding: 0 2px;border: none;border-radius: 2px;cursor: pointer;}#rwl-setMenu{text-align:left;font-size:14px;z-index:999999;border: 1px solid cornflowerblue;}#rwl-setMenu p{margin:5px auto;} </style></remove-web-limits-iqxin><tbdiv id="picinpicBtn"></tbdiv><tbdiv id="playerControlBtn"></tbdiv><tbdiv id="leftFullStackButton"></tbdiv><tbdiv id="rightFullStackButton"></tbdiv></body><div style="display: block; opacity: 1;"><template data-savepage-shadowroot=""><style>/*savepage-import-url=chrome-extension://gfbliohnnapiefjpjlpjnehglfpaknnc/pages/shadow.css*/</style><iframe allowtransparency="true" frameborder="0" scrolling="no" class="sk_ui" data-savepage-src="chrome-extension://gfbliohnnapiefjpjlpjnehglfpaknnc/pages/frontend.html" src="" title="Surfingkeys" style="height: 0px; pointer-events: none;"></iframe></template></div></html>

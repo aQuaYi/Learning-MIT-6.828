@@ -28,6 +28,7 @@ virtual box 中的 Ubuntu 18.04。
 
 - [LEC01: Introduction and examples](LEC/01)
 - [LEC02: Dynamic memory allocation (allocators)](LEC/02)
+- [LEC03:  C and gdb (pointers example)](LEC/03)
 
 ## 实验
 
