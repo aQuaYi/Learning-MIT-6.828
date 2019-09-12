@@ -1,7 +1,16 @@
 {
 	"cSpell.words": [
+		"alloc",
+		"bigint",
+		"dlmalloc",
+		"kalloc",
+		"malloc",
+		"mmap",
 		"riscv",
 		"rtmlec",
-		"shishujuan"
+		"sbrk",
+		"shishujuan",
+		"struct",
+		"umalloc"
 	]
 }
