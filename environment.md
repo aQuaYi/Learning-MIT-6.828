@@ -11,6 +11,15 @@ $ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
 $
 ```
 
+这是一个漫长的下载过程，如果出现了什么意外，可以使用以下方法局部更新。
+
+```shell
+$ git clone https://github.com/riscv/riscv-gnu-toolchain
+$ cd riscv-gnu-toolchain
+$ git submodule update --init --recursive
+$
+```
+
 clone 完成后，安装编译所需的软件
 
 ```shell

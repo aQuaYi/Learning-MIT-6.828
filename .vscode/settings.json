@@ -21,7 +21,9 @@
 		"sbrk",
 		"shishujuan",
 		"struct",
+		"submodule",
 		"texinfo",
+		"toolchain",
 		"umalloc"
 	]
 }
