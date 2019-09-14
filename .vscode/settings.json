@@ -1,16 +1,27 @@
 {
 	"cSpell.words": [
 		"alloc",
+		"autoconf",
+		"automake",
+		"autotools",
 		"bigint",
 		"dlmalloc",
+		"gperf",
 		"kalloc",
+		"libexpat",
+		"libgmp",
+		"libmpc",
+		"libmpfr",
+		"libtool",
 		"malloc",
 		"mmap",
+		"patchutils",
 		"riscv",
 		"rtmlec",
 		"sbrk",
 		"shishujuan",
 		"struct",
+		"texinfo",
 		"umalloc"
 	]
 }

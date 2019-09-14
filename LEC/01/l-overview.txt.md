@@ -1,4 +1,4 @@
-6.S081/6.828 2019 Lecture 1: O/S overview
+# 6.S081/6.828 2019 Lecture 1: O/S overview
 
 Overview
 
@@ -43,7 +43,7 @@ Overview
             write(fd, "hello\n", 6);
             pid = fork();
 
-  * These look like function calls but they aren't 
+  * These look like function calls but they aren't
 
 * Why is O/S design/implementation hard/interesting?
   * unforgiving environment: quirky h/w, hard to debug
@@ -75,7 +75,7 @@ Class structure
   * lab background
   * O/S papers
 
-* Labs: 
+* Labs:
   The point: hands-on experience
   One or two weeks each.
   Three kinds:
