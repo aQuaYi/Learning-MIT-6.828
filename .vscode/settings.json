@@ -24,10 +24,12 @@
 		"rtmlec",
 		"sbrk",
 		"shishujuan",
+		"softmmu",
 		"struct",
 		"submodule",
 		"texinfo",
 		"toolchain",
-		"umalloc"
+		"umalloc",
+		"werror"
 	]
 }
