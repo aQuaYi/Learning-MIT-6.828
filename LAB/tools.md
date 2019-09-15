@@ -6,12 +6,12 @@
 <!-- TOC depthFrom:2 -->
 
 - [安装工具链](#安装工具链)
-	- [在 Manjaro 上安装工具(推荐)](#在-manjaro-上安装工具推荐)
-	- [在 Ubuntu 18.04 上编译工具](#在-ubuntu-1804-上编译工具)
+	- [(推荐)在 Manjaro 上安装工具](#推荐在-manjaro-上安装工具)
+	- [(可选)在 Ubuntu 18.04 上编译工具](#可选在-ubuntu-1804-上编译工具)
 	- [安装 `QEMU`](#安装-qemu)
 	- [检查安装](#检查安装)
 - [安装 `xv6`](#安装-xv6)
-	- [运行 xv6](#运行-xv6)
+- [运行 xv6](#运行-xv6)
 
 <!-- /TOC -->
 
@@ -19,7 +19,7 @@
 
 MacOS，Linux 及 Windows 都能安装工具链，具体安装方式在官方 [tools](https://pdos.csail.mit.edu/6.828/2019/tools.html) 指南中都有说明。我试用了以下两种安装方式。
 
-### 在 Manjaro 上安装工具(推荐)
+### (推荐)在 Manjaro 上安装工具
 
 [Manjaro](https://manjaro.org/download/xfce/)基于 Arch linux，与 Arch 使用同样的软件仓库。所以，可以使用以下方式安装。
 
@@ -27,7 +27,7 @@ MacOS，Linux 及 Windows 都能安装工具链，具体安装方式在官方 [t
 sudo pacman -S riscv64-linux-gnu-binutils riscv64-linux-gnu-gcc riscv64-linux-gnu-gdb qemu-arch-extra
 ```
 
-### 在 Ubuntu 18.04 上编译工具
+### (可选)在 Ubuntu 18.04 上编译工具
 
 下载源代码，
 
@@ -44,6 +44,7 @@ $
 
 ```shell
 $ git submodule update --init --recursive
+# 没有任何输出，代表下载完毕
 $
 ```
 
@@ -59,7 +60,7 @@ $
 ```shell
 $ cd riscv-gnu-toolchain
 $ ./configure --prefix=/usr/local
-$ sudo make
+$ sudo make # 官方指南的代码是错误的
 $ cd ..
 $
 ```
@@ -79,6 +80,7 @@ $
 ```shell
 $ cd qemu-4.1.0
 $ ./configure --disable-kvm --disable-werror --prefix=/usr/local --target-list="riscv64-softmmu"
+# 如何上面的代码报错，请搜索错误信息。很容易解决的。
 $ make
 $ sudo make install
 $ cd ..
@@ -98,12 +100,21 @@ QEMU emulator version 4.1.0
 
 ## 安装 `xv6`
 
-### 运行 xv6
+出于个人习惯，我 `fork` 了 `https://github.com/mit-pdos/xv6-riscv-fall19` 。然后，把 `fork` 后的项目，添加了为了此项目的子模块。
+
+```shell
+# 在本项目的根目录下
+$ git submodule add https://github.com/aQuaYi/xv6-riscv-fall19 xv6-riscv
+$ cd xv6-riscv
+$
+```
+
+## 运行 xv6
 
 You should also be able to compile and run xv6:
 
 ```shell
-# in the xv6 directory
+# in the xv6-riscv directory
 $ make qemu
 # ... lots of output ...
 init: starting sh
