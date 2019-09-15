@@ -120,3 +120,5 @@ $ make qemu
 init: starting sh
 $
 ```
+
+> tip: qemu 退出方法 ctrl + A 按 X
