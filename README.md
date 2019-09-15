@@ -9,7 +9,6 @@
 
 <!-- TOC depthFrom:2 -->
 
-- [实验环境](#实验环境)
 - [课堂](#课堂)
 - [实验](#实验)
 - [参考资料](#参考资料)
@@ -18,12 +17,6 @@
 
 <!-- /TOC -->
 
-## 实验环境
-
-virtual box 中的 Ubuntu 18.04。
-
-具体细节请参见 [环境搭建](environment.md)
-
 ## 课堂
 
 - [LEC01: Introduction and examples](LEC/01)
@@ -31,6 +24,8 @@ virtual box 中的 Ubuntu 18.04。
 - [LEC03:  C and gdb (pointers example)](LEC/03)
 
 ## 实验
+
+- [构建工具链](LAB/tools.md)
 
 ## 参考资料
 

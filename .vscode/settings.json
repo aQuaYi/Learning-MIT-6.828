@@ -1,10 +1,12 @@
 {
 	"cSpell.words": [
+		"Manjaro",
 		"alloc",
 		"autoconf",
 		"automake",
 		"autotools",
 		"bigint",
+		"binutils",
 		"dlmalloc",
 		"gperf",
 		"kalloc",
@@ -15,13 +17,17 @@
 		"libtool",
 		"malloc",
 		"mmap",
+		"pacman",
 		"patchutils",
+		"qemu",
 		"riscv",
 		"rtmlec",
 		"sbrk",
 		"shishujuan",
 		"struct",
+		"submodule",
 		"texinfo",
+		"toolchain",
 		"umalloc"
 	]
 }
