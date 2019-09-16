@@ -12,13 +12,13 @@
 
 ## 预习
 
-阅读 [xv6 讲义](book-riscv-rev0.pdf) 第一章
+阅读 [xv6 讲义](../book-riscv-rev0.pdf) 第一章
 
 ## 课堂材料
 
 - [简介(introduction)](l-overview.txt.md)
 - [示例(examples)](examples)
-- [xv6 讲义](book-riscv-rev0.pdf)
+- [xv6 讲义](../book-riscv-rev0.pdf)
 
 ## 作业
 
