@@ -2,10 +2,12 @@
 
 <!-- TOC depthFrom:2 -->
 
-- [Boot xv6](#boot-xv6)
-- [sleep](#sleep)
-	- [添加用户程序的步骤](#添加用户程序的步骤)
-	- [C 语言基础知识](#c-语言基础知识)
+- [Lab01](#lab01)
+	- [Boot xv6](#boot-xv6)
+	- [sleep](#sleep)
+		- [添加用户程序的步骤](#%e6%b7%bb%e5%8a%a0%e7%94%a8%e6%88%b7%e7%a8%8b%e5%ba%8f%e7%9a%84%e6%ad%a5%e9%aa%a4)
+		- [C 语言基础知识](#c-%e8%af%ad%e8%a8%80%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86)
+	- [ping-pong](#ping-pong)
 
 <!-- /TOC -->
 
@@ -84,3 +86,8 @@ int main(int argc, char *argv[])
 
 - **argc**，是指传入参数的个数。
 - **argv**，是传入参数的数组。
+
+## ping-pong
+
+- `parent` 发送 `ping`
+- `child` 发送 `pong`
