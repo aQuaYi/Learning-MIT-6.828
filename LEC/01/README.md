@@ -18,6 +18,8 @@
 
 阅读 [xv6 讲义](../book-riscv-rev0.pdf) 第一章
 
+<https://www.youtube.com/watch?v=tc4ROCJYbm0> 观看这个关于 unix 的视频。
+
 ## 课堂材料
 
 - [简介(introduction)](l-overview.txt.md)
