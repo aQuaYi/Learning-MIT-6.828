@@ -4,35 +4,51 @@ Overview
 
 * 6.S081 goals
   * Understand operating system design and implementation
+  * 理解操作系统的设计与实现
   * Hands-on experience extending a small O/S
+  * 亲手扩展一个小的操作系统
   * Hands-on experience writing systems software
+  * 亲手编写系统软件
 
 * What is the purpose of an O/S?
   * Abstract the hardware for convenience and portability
+  * 为了使用和移植方便，对硬件进行抽象
   * Multiplex the hardware among multiple applications
+  * 在多个应用程序之间复用硬件
   * Isolate applications in order to contain bugs
+  * TODO: 不明白上一句
   * Allow sharing among applications
+  * 在应用程序间分享内容
   * Control sharing for security
+  * 为了安全，监控分享的内容
   * Provide high performance
+  * 提供高性能
   * Support a wide range of applications
+  * 提供广泛的软件
 
 * What is the O/S design approach?
   * abstractions that are easy to use and share
+  * 进行易于使用和分享的抽象
   * a separate referee to isolate and control sharing
+  * 对隔离和控制分享进行单独的判断
 
 * Organization: layered picture
   [user/kernel diagram]
-  - user applications: vi, gcc, DB, &c
-  - kernel services
-  - h/w: CPU, mem, disk, net, &c
-  * we care a lot about the interfaces and internal kernel structure
+  * user applications: vi, gcc, DB, &c
+  * 应用软件
+  * kernel services
+  * 内核服务
+  * h/w: CPU, mem, disk, net, &c
+  * 硬件
+* we care a lot about the interfaces and internal kernel structure
+* 我们最关注接口和内核的结构
 
 * What services does an O/S kernel typically provide?
-  * process (a running program)
-  * memory allocation
-  * file contents
-  * directories and file names
-  * access control (security)
+  * process (a running program)，进程
+  * memory allocation 内存分配
+  * file contents 文件内容
+  * directories and file names 目录和文件的名字
+  * access control (security) 获取权限
   * many others: users, IPC, network, time, terminals
 
 * What does the O/S kernel interface look like?
@@ -44,6 +60,7 @@ Overview
             pid = fork();
 
   * These look like function calls but they aren't
+  * TODO: 为什么这么说？
 
 * Why is O/S design/implementation hard/interesting?
   * unforgiving environment: quirky h/w, hard to debug
@@ -60,14 +77,14 @@ Overview
   * new use cases: smart-phones, cloud, virtual machines
 
 * You'll be glad you took this course if you...
-  * care about what goes on under the hood
-  * like infrastructure
-  * care about high performance
-  * need to diagnose bugs or security problems
+  * care about what goes on under the hood 想要探寻内部的运行机制
+  * like infrastructure 喜爱软件的基础框架
+  * care about high performance 关心高性能计算
+  * need to diagnose bugs or security problems 需要出错或者安全问题
 
 Class structure
 
-* See web site: https://pdos.csail.mit.edu/6.828
+* See web site: <https://pdos.csail.mit.edu/6.828>
 
 * Lectures
   * O/S ideas
@@ -117,6 +134,8 @@ Introduction to UNIX system calls
   xv6 runs on RISC-V, as in current 6.004
   you'll run xv6 under the qemu virtual machine
 
+NOTICE: 开始举例说明了
+
 * example: copy.c, copy input to output
   read bytes from input, write them to the output
   $ copy
@@ -149,6 +168,7 @@ Introduction to UNIX system calls
   note: these examples ignore errors -- don't be this sloppy!
     find out about system call arguments/return with "man 2 open"
 
+* 描述了 open System call 的执行过程。
 * what happens when a program calls the open() system call?
   looks like a function call, but it's actually a special instruction
   hardware saves some user registers
@@ -175,6 +195,7 @@ Introduction to UNIX system calls
     window systems, GUIs, servers, compute clusters, &c.
   but the shell and command-line utilities were the original interface.
   we can exercise many system calls via the shell.
+  但是，shell 和命令行工具，是最原始的接口。我们可以通过 shell 练习 System call。
 
 * example: fork.c, create a new process
   the shell creates a new process for each command you type, e.g. for
@@ -183,7 +204,7 @@ Introduction to UNIX system calls
     $ fork
   the kernel copies the parent process to produce a child
     instructions, data, registers, file descriptors, current directory
-  only difference: fork() returns a pid in parent, 0 in child
+  **only difference**: fork() returns a pid in parent, 0 in child
   a pid (process ID) is an integer, kernel gives each process a different pid
   thus:
     fork.c's "fork() returned" executes in *both* processes
