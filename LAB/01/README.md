@@ -8,6 +8,7 @@
 		- [添加用户程序的步骤](#%e6%b7%bb%e5%8a%a0%e7%94%a8%e6%88%b7%e7%a8%8b%e5%ba%8f%e7%9a%84%e6%ad%a5%e9%aa%a4)
 		- [C 语言基础知识](#c-%e8%af%ad%e8%a8%80%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86)
 	- [ping-pong](#ping-pong)
+	- [primes](#primes)
 
 <!-- /TOC -->
 
@@ -91,3 +92,7 @@ int main(int argc, char *argv[])
 
 - `parent` 发送 `ping`
 - `child` 发送 `pong`
+
+## primes
+
+我自己做的程序始终有问题，所以照着 [sieve.pdf](sieve.pdf) 中的程序，抄了一遍。居然可以。
