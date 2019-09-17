@@ -26,9 +26,10 @@
 
 ## 实验
 
-**试验结果，请在 <https://github.com/aQuaYi/xv6-riscv-fall19> 查看。**
+**实验结果，请在 <https://github.com/aQuaYi/xv6-riscv-fall19> 查看。**
 
 - [构建工具链](LAB/tools.md)
+- [01 util: Unix utilities](LAB/01)
 
 ## xv6 中的 System Call
 
