@@ -9,6 +9,7 @@
 		- [C 语言基础知识](#c-%e8%af%ad%e8%a8%80%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86)
 	- [ping-pong](#ping-pong)
 	- [primes](#primes)
+	- [find](#find)
 
 <!-- /TOC -->
 
@@ -96,3 +97,7 @@ int main(int argc, char *argv[])
 ## primes
 
 我自己做的程序始终有问题，所以照着 [sieve.pdf](sieve.pdf) 中的程序，抄了一遍。居然可以。
+
+## find
+
+解答这一题，需要了解 unix 文件系统的细节知识。

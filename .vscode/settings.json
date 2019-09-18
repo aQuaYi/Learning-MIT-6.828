@@ -20,6 +20,7 @@
 		"forktest",
 		"gperf",
 		"grep's",
+		"inum",
 		"kalloc",
 		"kalloctest",
 		"libexpat",
