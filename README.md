@@ -35,6 +35,8 @@
 
 ## 参考资料
 
+- [Caffeinated 6.828](https://zhuanlan.zhihu.com/p/49935908)
+
 ## 类似笔记
 
 - [SmallPond/MIT6.828_OS](https://github.com/SmallPond/MIT6.828_OS)
